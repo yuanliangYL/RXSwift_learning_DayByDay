@@ -14,7 +14,7 @@ class ViewController: UIViewController{
 
     //数据模型
     var dataArr: [String] = []
-    var controllerArr: [UIViewController] = []
+    var controllerArr: [String] = []
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -34,15 +34,20 @@ class ViewController: UIViewController{
 
     func initData() -> () {
         dataArr = [
-            "Day01:响应式编程与传统式编程的比较",
-            "Day02:Observable介绍、创建可观察序列"
+            "响应式编程与传统式编程的比较",
+            "Observable介绍、创建可观察序列",
+            "Observable订阅、事件监听、订阅销毁",
+            "观察者1： AnyObserver、Binder",
+            "观察者2： 自定义可绑定属性"
         ];
         tableView.reloadData()
 
-
         controllerArr = [
-            MusicController(),
-            ObservableViewController()
+            "MusicController",
+            "ObservableViewController",
+            "SubscribeViewController",
+            "ObserverViewController",
+            "CustomBinderVC"
         ]
     }
 
@@ -70,7 +75,24 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(controllerArr[indexPath.row], animated: true)
+
+        //1:动态获取命名空间
+        guard  let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
+            print("获取命名空间失败")
+            return
+        }
+        //根据命名空间和传过来的控制器名字获取控制器的类
+        let vcClass: AnyClass? = Bundle.main.classNamed("\(nameSpace).\(controllerArr[indexPath.row])")
+
+         // Swift中如果想通过一个Class来创建一个对象, 必须告诉系统这个Class的确切类型
+        guard let typeClass = vcClass as? UIViewController.Type else {
+             print("vcClass不能当做UIViewController")
+             return
+         }
+        let myVc = typeClass.init()
+
+        navigationController?.pushViewController(myVc, animated: true)
+
     }
 
 }

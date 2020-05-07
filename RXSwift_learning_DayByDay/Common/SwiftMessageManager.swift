@@ -56,21 +56,19 @@ class SwiftMessageManager: NSObject {
         switch layoutType {
 
         case .MessageView:
-
-            print("已经在初始化的时候执行过")
-
+//            print("已经在初始化的时候执行过")
+            break
         case .CardView:
             view = MessageView.viewFromNib(layout: .cardView)
-
+             break
         case .TabView:
             view = MessageView.viewFromNib(layout: .tabView)
-
+             break
         case .StatusLine:
             view = MessageView.viewFromNib(layout: .statusLine)
-
+             break
         default:
-
-            view = MessageView.viewFromNib(layout: .messageView)
+            break
         }
 
 
