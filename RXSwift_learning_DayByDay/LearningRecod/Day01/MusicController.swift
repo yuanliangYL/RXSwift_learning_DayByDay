@@ -69,6 +69,7 @@ class MusicController: UIViewController {
         super.viewDidLoad()
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "musicCell")
+
         //将数据源数据绑定到tableView上
         musicListViewModel.data
             .bind(to: tableView.rx.items(cellIdentifier:"musicCell")) { _, music, cell in

@@ -19,8 +19,6 @@ enum  LayoutType : String{
     case TabView
 
     case StatusLine
-
-    case MessageViewIOS8
 }
 
 //消息类型

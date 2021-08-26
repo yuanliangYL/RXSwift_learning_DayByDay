@@ -161,7 +161,7 @@ class SubscribeViewController: UIViewController {
 
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
-            SwiftMessageManager.showMessage(layoutType: .MessageView, themeType:.Success, iconImageType:.light, presentationStyleType:.top, title: "详情", body:info, isHiddenBtn: true, seconds: 6)
+            SwiftMessageManager.showMessage(layoutType: .CardView, themeType:.Success, iconImageType:.light, presentationStyleType:.top, title: "详情", body:info, isHiddenBtn: true, seconds: 6)
         }
 
 

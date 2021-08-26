@@ -7,7 +7,9 @@
 //
 
 import UIKit
+
 import RxSwift
+
 import RxCocoa
 import SwiftMessages
 
@@ -33,9 +35,7 @@ class ObservableViewController: UIViewController {
         //tableView点击响应
         tableView.rx.modelSelected(ObservablemethodModel.self)
             .subscribe(onNext: {obsevablemodel in
-
                 SwiftMessageManager.showMessage(layoutType: .MessageView, themeType:.Success, iconImageType:.light, presentationStyleType:.top, title: "详情", body: obsevablemodel.detailinfo, isHiddenBtn: true, seconds: 6)
-
             })
             .disposed(by: disposeBag)
 
