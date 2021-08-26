@@ -119,15 +119,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5772EE2924639FA500B83905 /* Day02 */ = {
+		5772EE2924639FA500B83905 /* Day02可观察序列理解 */ = {
 			isa = PBXGroup;
 			children = (
 				5772EE2A2463A15400B83905 /* ObservableViewController.swift */,
 				5772EE2B2463A15400B83905 /* ObservableViewController.xib */,
-				5772EE2E2463A32900B83905 /* ObservablemethodModel.swift */,
 				5772EE302463A3C300B83905 /* ObservableViewModel.swift */,
+				5772EE2E2463A32900B83905 /* ObservablemethodModel.swift */,
 			);
-			path = Day02;
+			path = "Day02可观察序列理解";
 			sourceTree = "<group>";
 		};
 		5772EE382463D58300B83905 /* Day03 */ = {
@@ -157,41 +157,6 @@
 			path = Day05;
 			sourceTree = "<group>";
 		};
-		5772EE3B2463D59D00B83905 /* Day06 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Day06;
-			sourceTree = "<group>";
-		};
-		5772EE3C2463D5A300B83905 /* Day07 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Day07;
-			sourceTree = "<group>";
-		};
-		5772EE3D2463D5A900B83905 /* Day08 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Day08;
-			sourceTree = "<group>";
-		};
-		5772EE3E2463D5AF00B83905 /* Day09 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Day09;
-			sourceTree = "<group>";
-		};
-		5772EE3F2463D5B500B83905 /* Day10 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Day10;
-			sourceTree = "<group>";
-		};
 		577923A72462C02200A11C3E = {
 			isa = PBXGroup;
 			children = (
@@ -217,8 +182,9 @@
 		577923B22462C02200A11C3E /* RXSwift_learning_DayByDay */ = {
 			isa = PBXGroup;
 			children = (
+				57C1AF9A26D7763100111BBF /* RestarRecord */,
 				577923E92462C6B100A11C3E /* Common */,
-				577923E32462C02B00A11C3E /* LearningRecod */,
+				577923E32462C02B00A11C3E /* LearningRecord */,
 				577923B32462C02200A11C3E /* AppDelegate.swift */,
 				577923B52462C02200A11C3E /* SceneDelegate.swift */,
 				577923B72462C02200A11C3E /* ViewController.swift */,
@@ -248,24 +214,19 @@
 			path = RXSwift_learning_DayByDayUITests;
 			sourceTree = "<group>";
 		};
-		577923E32462C02B00A11C3E /* LearningRecod */ = {
+		577923E32462C02B00A11C3E /* LearningRecord */ = {
 			isa = PBXGroup;
 			children = (
-				5772EE3F2463D5B500B83905 /* Day10 */,
-				5772EE3E2463D5AF00B83905 /* Day09 */,
-				5772EE3D2463D5A900B83905 /* Day08 */,
-				5772EE3C2463D5A300B83905 /* Day07 */,
-				5772EE3B2463D59D00B83905 /* Day06 */,
 				5772EE3A2463D59700B83905 /* Day05 */,
 				5772EE392463D59200B83905 /* Day04 */,
 				5772EE382463D58300B83905 /* Day03 */,
-				5772EE2924639FA500B83905 /* Day02 */,
-				577923E42462C47F00A11C3E /* Day01 */,
+				5772EE2924639FA500B83905 /* Day02可观察序列理解 */,
+				577923E42462C47F00A11C3E /* Day01Tableview上的初级使用 */,
 			);
-			path = LearningRecod;
+			path = LearningRecord;
 			sourceTree = "<group>";
 		};
-		577923E42462C47F00A11C3E /* Day01 */ = {
+		577923E42462C47F00A11C3E /* Day01Tableview上的初级使用 */ = {
 			isa = PBXGroup;
 			children = (
 				577923EC2462C70F00A11C3E /* Music.swift */,
@@ -273,7 +234,7 @@
 				577923F02462C85D00A11C3E /* MusicController.swift */,
 				577923F12462C85D00A11C3E /* MusicController.xib */,
 			);
-			path = Day01;
+			path = "Day01Tableview上的初级使用";
 			sourceTree = "<group>";
 		};
 		577923E92462C6B100A11C3E /* Common */ = {
@@ -283,6 +244,13 @@
 				5772EE6E2463FE5200B83905 /* YLLabelFont.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		57C1AF9A26D7763100111BBF /* RestarRecord */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RestarRecord;
 			sourceTree = "<group>";
 		};
 		79B992A7B82B98A7CAF88DB6 /* Pods */ = {

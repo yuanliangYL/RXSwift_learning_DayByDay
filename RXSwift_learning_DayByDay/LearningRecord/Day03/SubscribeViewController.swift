@@ -20,7 +20,6 @@ class SubscribeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         //typeOne()
 
         //typeTwo()

@@ -57,7 +57,7 @@ import RxCocoa
 // MARK: RxSwift 进行改造
 class MusicController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mytableView: UITableView!
 
     //歌曲列表数据源
     let musicListViewModel = MusicListViewModel()
@@ -68,19 +68,26 @@ class MusicController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "musicCell")
+        mytableView.register(UITableViewCell.self, forCellReuseIdentifier: "musicCell")
 
         //将数据源数据绑定到tableView上
         musicListViewModel.data
-            .bind(to: tableView.rx.items(cellIdentifier:"musicCell")) { _, music, cell in
+            .bind(to: mytableView.rx.items(cellIdentifier:"musicCell")) { _, music, cell in
+
                 cell.textLabel?.text = music.name
                 cell.detailTextLabel?.text = music.singer
+                
         }.disposed(by: disposeBag)
 
         //tableView点击响应
-        tableView.rx.modelSelected(Music.self).subscribe(onNext: { music in
+        mytableView.rx.modelSelected(Music.self).subscribe(onNext: { music in
             print("你选中的歌曲信息【\(music)】")
         }).disposed(by: disposeBag)
+
+        mytableView.rx.itemSelected.subscribe(onNext: { indexPath in
+            print("selected the row is \(indexPath.row)")
+        }).disposed(by: disposeBag)
+
     }
 
 }

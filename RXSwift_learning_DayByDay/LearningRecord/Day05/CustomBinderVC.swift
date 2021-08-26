@@ -32,7 +32,7 @@ class CustomBinderVC: UIViewController {
     //    通过对 UI 类进行扩展
     func withUIKit() -> () {
         //Observable序列（每隔0.5秒钟发出一个索引数）
-        let observable = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)
+        let observable = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)//主线程监听
         observable
             .map { CGFloat($0) }
             .bind(to: label.fontSize) //根据索引数不断变放大字体

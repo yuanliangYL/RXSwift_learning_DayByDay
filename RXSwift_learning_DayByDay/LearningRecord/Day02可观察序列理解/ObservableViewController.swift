@@ -5,6 +5,18 @@
 //  Created by AlbertYuan on 2020/5/7.
 //  Copyright © 2020 JoyReach. All rights reserved.
 //
+/*
+
+ 可观察序列:Observable
+ Event:事件
+ 订阅者:Observer
+
+
+ Observable<T> 这个类就是Rx 框架的基础，我们可以称它为可观察序列。
+ 它的作用就是可以异步地产生一系列的 Event（事件）, Event 就是一个枚举:
+ 有了可观察序列，我们还需要有一个Observer（订阅者）来订阅它，这样这个订阅者才能收到 Observable<T> 不时发出的 Event。
+ */
+
 
 import UIKit
 
@@ -35,14 +47,26 @@ class ObservableViewController: UIViewController {
         //tableView点击响应
         tableView.rx.modelSelected(ObservablemethodModel.self)
             .subscribe(onNext: {obsevablemodel in
-                SwiftMessageManager.showMessage(layoutType: .MessageView, themeType:.Success, iconImageType:.light, presentationStyleType:.top, title: "详情", body: obsevablemodel.detailinfo, isHiddenBtn: true, seconds: 6)
+
+                SwiftMessageManager.showMessage(layoutType: .MessageView,
+                                                themeType:.Success,
+                                                iconImageType:.light,
+                                                presentationStyleType:.top,
+                                                title: "详情",
+                                                body: obsevablemodel.detailinfo,
+                                                isHiddenBtn: true,
+                                                seconds: 6)
+
             })
             .disposed(by: disposeBag)
+
 
         tableView.rx.itemSelected
             .subscribe(onNext :{ IndexPath in
                 switch IndexPath.row {
+                
                 case 8: //generate() 方法
+
                     let observable = Observable.generate(
                         initialState: 0,
                         condition: { $0 <= 10 },
@@ -51,7 +75,6 @@ class ObservableViewController: UIViewController {
                     let _ = observable.subscribe {
                         print($0)
                     }
-                    break
 
                 case 9: //create() 方法
 
@@ -70,14 +93,15 @@ class ObservableViewController: UIViewController {
                         print($0)
                     }
 
-                    break
+
+
                 case 10: //deferred() 方法
+
                     //用于标记是奇数、还是偶数
                     var isOdd = true
 
                     //使用deferred()方法延迟Observable序列的初始化，通过传入的block来实现Observable序列的初始化并且返回。
                     let factory : Observable<Int> = Observable.deferred {
-
                         //让每次执行这个block时候都会让奇、偶数进行交替
                         isOdd = !isOdd
 
@@ -99,30 +123,31 @@ class ObservableViewController: UIViewController {
                         print("\(isOdd)", event)
                     }
 
-                    break
 
-                case 11:  //interval() 方法
+                case 11:
+                    //interval() 方法
                     let observable = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
-                     let _ = observable.subscribe { event in
+                    let _ = observable.subscribe { event in
                         print(event)
                     }
-                    break
+                    .disposed(by: self.disposeBag)
 
-                case 12: //timer() 方法
+                case 12:
+                    //timer() 方法 //这个方法有两种用法
                     //5秒种后发出唯一的一个元素0
-                    let observable = Observable<Int>.timer(5, scheduler: MainScheduler.instance)
-                     let _ = observable.subscribe { event in
-                        print(event)
-                    }
+//                    let observable = Observable<Int>.timer(5, scheduler: MainScheduler.instance)
+//                    let _ = observable.subscribe { event in
+//                        print(event)
+//                    }.disposed(by: self.disposeBag)
 
-                    /*
+
                      //延时5秒种后，每隔1秒钟发出一个元素
                      let observable = Observable<Int>.timer(5, period: 1, scheduler: MainScheduler.instance)
                      observable.subscribe { event in
                      print(event)
-                     }
-                     */
-                    break
+                     }.disposed(by: self.disposeBag)
+                    //period：n. 周期，期间；时期；一段时间；经期；课时；句点，句号
+
                 default:
                     break
                 }
@@ -131,6 +156,8 @@ class ObservableViewController: UIViewController {
         //设置 tableView Delegate/DataSource 的代理方法
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
+
+
 
 }
 
@@ -143,10 +170,3 @@ extension ObservableViewController: UIScrollViewDelegate {
 }
 
 
-/*
- Observable<T> 这个类就是Rx 框架的基础，我们可以称它为可观察序列。
- 它的作用就是可以异步地产生一系列的 Event（事件）, Event 就是一个枚举:
- 
- 有了可观察序列，我们还需要有一个Observer（订阅者）来订阅它，这样这个订阅者才能收到 Observable<T> 不时发出的 Event。
- 
- */
