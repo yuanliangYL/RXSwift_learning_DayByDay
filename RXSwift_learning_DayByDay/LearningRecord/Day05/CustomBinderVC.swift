@@ -20,9 +20,9 @@ class CustomBinderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //        withUIKit()
+//                withUIKit()
 
-        //        withReactiveKit()
+//                withReactiveKit()
 
         rxswiftUIobservable()
 
@@ -60,7 +60,6 @@ class CustomBinderVC: UIViewController {
             .map { "当前索引数：\($0 )"}
             .bind(to: label.rx.text) //收到发出的索引数后显示到label上
             .disposed(by: disposeBag)
-    }
-
+    
     
 }

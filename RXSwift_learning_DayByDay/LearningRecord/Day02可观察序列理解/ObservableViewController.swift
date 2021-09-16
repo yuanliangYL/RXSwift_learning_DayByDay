@@ -21,8 +21,8 @@
 import UIKit
 
 import RxSwift
-
 import RxCocoa
+
 import SwiftMessages
 
 class ObservableViewController: UIViewController {

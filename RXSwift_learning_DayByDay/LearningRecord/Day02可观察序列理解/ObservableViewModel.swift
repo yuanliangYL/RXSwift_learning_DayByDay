@@ -14,6 +14,21 @@ enum MyError: Error {
     case B
 }
 
+//基础三大概念：可订阅序列Observable   事件event   订阅者Observer
+
+/*
+Evnet :
+ next：next 事件就是那个可以携带数据 <T> 的事件，可以说它就是一个“最正常”的事件。
+ error：error 事件表示一个错误，它可以携带具体的错误内容，一旦 Observable 发出了 error event，则这个 Observable 就等于终止了，以后它再也不会发出 event 事件了。
+ completed：completed 事件表示 Observable 发出的事件正常地结束了，跟 error 一样，一旦 Observable 发出了 completed event，则这个 Observable 就等于终止了，以后它再也不会发出 event 事件了
+ */
+
+//Observable 作为 Rx 的根基，我们首先对它要有一些基本的了解
+//Observable<T> 这个类就是 Rx 框架的基础，我们可以称它为可观察序列。它的作用就是可以异步地产生一系列的 Event（事件），即一个 Observable<T> 对象会随着时间推移不定期地发出 event(element : T) 这样一个东西。
+//而且这些 Event 还可以携带数据，它的泛型 <T> 就是用来指定这个 Event 携带的数据的类型。
+//有了可观察序列，我们还需要有一个 Observer（订阅者）来订阅它，这样这个订阅者才能收到 Observable<T> 不时发出的 Event
+
+
 //13种创建序列的方法
 struct ObservableViewModel {
 

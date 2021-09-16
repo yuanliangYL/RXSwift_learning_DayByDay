@@ -16,10 +16,11 @@ extension UILabel {
 
     public var fontSize: Binder<CGFloat> {
 
-        return Binder(self) { label, fontSize in
+        return Binder(self) { (label, fontSize) in
             label.font = UIFont.systemFont(ofSize: fontSize)
         }
 
+        
     }
     
 }

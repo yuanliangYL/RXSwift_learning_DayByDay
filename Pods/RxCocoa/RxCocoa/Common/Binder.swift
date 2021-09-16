@@ -18,6 +18,7 @@ import RxSwift
  By default it binds elements on main scheduler.
  */
 public struct Binder<Value>: ObserverType {
+
     public typealias E = Value
     
     private let _binding: (Event<Value>) -> Void
@@ -27,7 +28,10 @@ public struct Binder<Value>: ObserverType {
     /// - parameter target: Target object.
     /// - parameter scheduler: Scheduler used to bind the events.
     /// - parameter binding: Binding logic.
-    public init<Target: AnyObject>(_ target: Target, scheduler: ImmediateSchedulerType = MainScheduler(), binding: @escaping (Target, Value) -> Void) {
+    public init<Target: AnyObject>(_ target: Target,
+                                   scheduler: ImmediateSchedulerType = MainScheduler(),
+                                   binding: @escaping (Target, Value) -> Void) {
+
         weak var weakTarget = target
 
         self._binding = { event in

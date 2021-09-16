@@ -130,22 +130,22 @@
 			path = "Day02可观察序列理解";
 			sourceTree = "<group>";
 		};
-		5772EE382463D58300B83905 /* Day03 */ = {
+		5772EE382463D58300B83905 /* Day03Observable订阅、事件监听、订阅销毁 */ = {
 			isa = PBXGroup;
 			children = (
 				5772EE402463D63700B83905 /* SubscribeViewController.swift */,
 				5772EE412463D63700B83905 /* SubscribeViewController.xib */,
 			);
-			path = Day03;
+			path = "Day03Observable订阅、事件监听、订阅销毁";
 			sourceTree = "<group>";
 		};
-		5772EE392463D59200B83905 /* Day04 */ = {
+		5772EE392463D59200B83905 /* Day04观察者1： AnyObserver、Binder */ = {
 			isa = PBXGroup;
 			children = (
 				5772EE662463F3EF00B83905 /* ObserverViewController.swift */,
 				5772EE672463F3EF00B83905 /* ObserverViewController.xib */,
 			);
-			path = Day04;
+			path = "Day04观察者1： AnyObserver、Binder";
 			sourceTree = "<group>";
 		};
 		5772EE3A2463D59700B83905 /* Day05 */ = {
@@ -218,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				5772EE3A2463D59700B83905 /* Day05 */,
-				5772EE392463D59200B83905 /* Day04 */,
-				5772EE382463D58300B83905 /* Day03 */,
+				5772EE392463D59200B83905 /* Day04观察者1： AnyObserver、Binder */,
+				5772EE382463D58300B83905 /* Day03Observable订阅、事件监听、订阅销毁 */,
 				5772EE2924639FA500B83905 /* Day02可观察序列理解 */,
 				577923E42462C47F00A11C3E /* Day01Tableview上的初级使用 */,
 			);

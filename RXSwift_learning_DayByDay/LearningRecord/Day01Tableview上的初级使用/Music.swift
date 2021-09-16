@@ -8,6 +8,7 @@
 
 import UIKit
 
+//
 class Music: NSObject {
     let name: String //歌名
     let singer: String //演唱者

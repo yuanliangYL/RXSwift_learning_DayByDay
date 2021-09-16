@@ -68,7 +68,7 @@ class ObserverViewController: UIViewController {
     func anyObserverToCreat() -> () {
      //        1，配合 subscribe 方法使用
         //观察者
-        let observer: AnyObserver<String> = AnyObserver { (event) in
+        let observer: AnyObserver<Int> = AnyObserver { (event) in
             switch event {
             case .next(let data):
                 print(data)
@@ -78,8 +78,12 @@ class ObserverViewController: UIViewController {
                 print("completed")
             }
         }
-        let observable = Observable.of("A", "B", "C")
-        observable.subscribe(observer).disposed(by: disposedBag)
+//        let observable = Observable.of("A", "B", "C")
+//        observable.subscribe(observer).disposed(by: disposedBag)
+
+         let observable = Observable.of(11, 22, 33)
+         observable.subscribe(observer).disposed(by: disposedBag)
+
 
 
         //配合 bindTo 方法使用

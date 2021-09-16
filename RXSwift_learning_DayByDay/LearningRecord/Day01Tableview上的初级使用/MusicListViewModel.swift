@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-//歌曲列表数据源  //传统方式
+////歌曲列表数据源  //传统方式:网络请求数据
 //struct MusicListViewModel {
 //    let data = [
 //        Music(name: "无条件", singer: "陈奕迅"),

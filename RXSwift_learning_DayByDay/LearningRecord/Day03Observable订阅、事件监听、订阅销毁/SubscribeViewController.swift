@@ -137,6 +137,7 @@ class SubscribeViewController: UIViewController {
             而这个DisposeBag 就会在自己快要dealloc 的时候，对它里面的所有订阅行为都调用 dispose()方法。
         */
         func intervarDispose() -> () {
+
             let observable = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
 
             let subscribetion = observable.subscribe(onNext: { (event) in
@@ -148,6 +149,7 @@ class SubscribeViewController: UIViewController {
             }, onDisposed: {
                 print("Disposed")
             })
+
             //15秒后回收，也可根据具体业务需求在适当的时候加上这句话
             let deadline = DispatchTime.now() + 15
 
